@@ -1,0 +1,16 @@
+{:pom {:group-id "org.danielsz"
+       :artifact-id "jvm-utils"
+       :version "0.1.2"
+       :name "jvm-utils"}
+ :packaging {:uberjar
+             {:enabled false
+              :build-properties {:main-class "jvm-utils.core"}
+              :excludes {:artifacts ["org.clojure:google-closure-library" "com.google.javascript:closure-compiler"]
+                         :filters ["META-INF/*.SF" "META-INF/*.DSA" "META-INF/*.RSA"]}}
+             :jar {:enabled true
+                   :remote-repository {:id "clojars"
+                                       :url "https://clojars.org/repo"}}}
+ :interactive {:enabled true
+               :tools-deps-alias :repl
+               :repl-port :auto
+               :repl-host "127.0.0.1"}}
